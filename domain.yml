@@ -8,6 +8,7 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - Ramosh_details
 
 responses:
   utter_greet:
@@ -28,6 +29,9 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_Ramosh_details:
+  - text: "Ramosh is a software developer, he is a full stack developer and he is currently working on a project called Rasa."
 
 session_config:
   session_expiration_time: 60

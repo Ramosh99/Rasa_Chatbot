@@ -89,3 +89,14 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: Ramosh_details
+  examples: |
+    - Who is Ramosh
+    - give ramosh's details
+    - What is Ramosh
+    - Tell me about Ramosh
+    - Ramosh
+    - Ramosh details
+    - Ramosh information
+

@@ -28,3 +28,12 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: Detail path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: Ramosh_details
+  - action: utter_Ramosh_details
+  - intent: mood_great
+  - action: utter_happy
