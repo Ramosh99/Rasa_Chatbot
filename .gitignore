@@ -1,0 +1,18 @@
+# Virtual Environment
+rasaenv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Rasa cache and logs
+.rasa/
+
+# Model files
+models/
+
+# Environment-specific files
+.env
+
+# Log files
+*.log
