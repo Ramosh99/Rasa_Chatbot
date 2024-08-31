@@ -16,3 +16,6 @@ models/
 
 # Log files
 *.log
+
+# credential file
+credentials.yml
