@@ -2,37 +2,43 @@ version: "3.1"
 
 intents:
   - greet
+  - store_data_name
+  - store_data_email
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - Ramosh_details
+
+entities:
+  - name
+  - email
+
+slots:
+  name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: name
+        conditions:
+          - active_loop: null
+  email:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: email
+        conditions:
+          - active_loop: null
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
+    - text: "Hello! How can I help you today?"
   utter_goodbye:
-  - text: "Bye"
-
+    - text: "Goodbye!"
+  utter_ask_name:
+    - text: "What is your name?"
+  utter_ask_email:
+    - text: "What is your email?"
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "I am a bot, here to assist you!"
 
-  utter_Ramosh_details:
-  - text: "Ramosh is a software developer, he is a full stack developer and he is currently working on a project called Rasa."
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+actions:
+  - action_store_data

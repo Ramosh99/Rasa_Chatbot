@@ -1,102 +1,43 @@
 version: "3.1"
-
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
     - hi
-    - hello there
+    - hello
+    - hey
     - good morning
     - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+
+- intent: store_data_name
+  examples: |
+    - [John](name)
+    - [Alex](name)
+    - [Alice](name)
+    - [Bob](name)
+    - [Jane](name)
+    - [Charlie](name)
+    - [Daisy](name)
+    - [Eva](name)
+    - [Any Name](name)
+
+- intent: store_data_email
+  examples: |
+    - my email is [kamal@gamail.com](email)
+    - store my email as [mihara@gamil.com](email)
+    - my email is [vimala@gmail.com](email)
+    - [yasiru@gmail.com](email) is my email
+
+- regex: name
+  examples: |
+    - [A-Z][a-z]+
+
+- regex: email
+  examples: |
+    - \b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
     - bye
     - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
     - see you later
-
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
-- intent: Ramosh_details
-  examples: |
-    - Who is Ramosh
-    - give ramosh's details
-    - What is Ramosh
-    - Tell me about Ramosh
-    - Ramosh
-    - Ramosh details
-    - Ramosh information
-
+    - have a nice day
