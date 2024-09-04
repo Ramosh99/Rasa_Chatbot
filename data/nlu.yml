@@ -10,13 +10,13 @@ nlu:
 
 - intent: store_data_name
   examples: |
-    - [John](name)
-    - [Alex](name)
-    - [Alice](name)
-    - [Bob](name)
-    - [Jane](name)
-    - [Charlie](name)
-    - [Daisy](name)
+    - my name is John](name)
+    - i am [Alex](name)
+    - this is [Alice](name)
+    - i am [Bob](name)
+    - this is [Jane](name)
+    - i am [Charlie](name)
+    - i am [Daisy](name)
     - [Eva](name)
     - [Any Name](name)
 
