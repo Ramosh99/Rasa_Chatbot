@@ -1,14 +1,29 @@
-version: "3.1"
+# data/stories.yml
 stories:
-- story: store user data
+- story: happy path
   steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: store_my_data
-    - action: utter_ask_name
-    - intent: store_data_name
-      entities:
-        - name: John Doe
-    - action: action_store_data
-    - intent: goodbye
-    - action: utter_goodbye
+  - intent: greet
+  - action: utter_greet
+  - intent: book_room
+  - action: utter_ask_room_type
+  - intent: inform
+    entities:
+    - room_type: "meeting room"
+  - slot_was_set:
+    - room_type: "meeting room"
+  - action: utter_ask_date
+  - intent: inform
+    entities:
+    - date: "2023-09-15"
+  - slot_was_set:
+    - date: "2023-09-15"
+  - action: utter_ask_time
+  - intent: inform
+    entities:
+    - time: "14:00"
+  - slot_was_set:
+    - time: "14:00"
+  - action: action_save_booking
+  - action: utter_confirm_booking
+  - intent: goodbye
+  - action: utter_goodbye

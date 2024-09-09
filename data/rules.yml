@@ -1,16 +1,5 @@
 version: "3.1"
 
-rules:
-
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
-
-- rule: request to store data
-  steps:
-    - intent: store_my_data
-    - action: utter_ask_name
 
 
 

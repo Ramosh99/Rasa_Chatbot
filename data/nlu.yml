@@ -1,31 +1,36 @@
-version: "3.1"
-
+# data/nlu.yml
 nlu:
 - intent: greet
   examples: |
-    - hi
-    - hello
     - hey
+    - hello
+    - hi
+    - hello there
     - good morning
     - good evening
-
-- intent: store_my_data
-  examples: |
-    - please store my data
-    - add my data
-    - store my data
-
-- intent: store_data_name
-  examples: |
-    - my name is John
-    - I am Alex
-    - This is Alice
-    - My name is Bob
-    - I am Daisy
+    - hey there
 
 - intent: goodbye
   examples: |
     - bye
     - goodbye
+    - see you around
     - see you later
     - have a nice day
+
+- intent: book_room
+  examples: |
+    - I want to book a room
+    - Can I reserve a room?
+    - I need to book a meeting space
+    - Is it possible to book a conference hall?
+    - How do I book a room?
+
+- intent: inform
+  examples: |
+    - I want a [meeting room](room_type)
+    - I need a [conference hall](room_type)
+    - The date is [2023-09-15](date)
+    - Book it for [2023-10-01](date)
+    - The time should be [14:00](time)
+    - I want it at [10:30](time)
