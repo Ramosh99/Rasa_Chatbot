@@ -3,14 +3,12 @@ stories:
 - story: store user data
   steps:
     - intent: greet
+    - action: utter_greet
+    - intent: store_my_data
     - action: utter_ask_name
     - intent: store_data_name
       entities:
         - name: John Doe
-    - action: utter_ask_email
-    - intent: store_data_email
-      entities:
-        - email:
     - action: action_store_data
     - intent: goodbye
     - action: utter_goodbye

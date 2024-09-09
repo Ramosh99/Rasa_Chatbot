@@ -7,7 +7,10 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: request to store data
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+    - intent: store_my_data
+    - action: utter_ask_name
+
+
+

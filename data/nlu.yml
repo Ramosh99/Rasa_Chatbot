@@ -1,4 +1,5 @@
 version: "3.1"
+
 nlu:
 - intent: greet
   examples: |
@@ -8,32 +9,19 @@ nlu:
     - good morning
     - good evening
 
+- intent: store_my_data
+  examples: |
+    - please store my data
+    - add my data
+    - store my data
+
 - intent: store_data_name
   examples: |
-    - my name is John](name)
-    - i am [Alex](name)
-    - this is [Alice](name)
-    - i am [Bob](name)
-    - this is [Jane](name)
-    - i am [Charlie](name)
-    - i am [Daisy](name)
-    - [Eva](name)
-    - [Any Name](name)
-
-- intent: store_data_email
-  examples: |
-    - my email is [kamal@gamail.com](email)
-    - store my email as [mihara@gamil.com](email)
-    - my email is [vimala@gmail.com](email)
-    - [yasiru@gmail.com](email) is my email
-
-- regex: name
-  examples: |
-    - [A-Z][a-z]+
-
-- regex: email
-  examples: |
-    - \b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b
+    - my name is John
+    - I am Alex
+    - This is Alice
+    - My name is Bob
+    - I am Daisy
 
 - intent: goodbye
   examples: |

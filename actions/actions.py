@@ -15,25 +15,16 @@ class ActionStoreData(Action):
 
         # Get the current slot values
         name = tracker.get_slot('name')
-        email = tracker.get_slot('email')
 
         # Check if both name and email are provided
-        if name and email:
+        if name :
             # Store both name and email in CSV
             with open('user_data.csv', 'a', newline='') as f:
                 writer = csv.writer(f)
-                writer.writerow([name, email])
+                writer.writerow([name])
             
-            dispatcher.utter_message(text=f"Data stored: Name - {name}, Email - {email}")
-        
-        elif name:
-            # If only name is provided
-            dispatcher.utter_message(text=f"Your name has been added as {name}.")
-        
-        elif email:
-            # If only email is provided
-            dispatcher.utter_message(text=f"Your email has been added as {email}.")
-        
+            dispatcher.utter_message(text=f"Data stored: Name - {name}")
+
         else:
             # If neither name nor email is provided
             dispatcher.utter_message(text="I need either your name or email to store your data.")
