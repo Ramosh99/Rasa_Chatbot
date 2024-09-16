@@ -22,4 +22,4 @@ policies:
   max_history: 5
   epochs: 100
 - name: RulePolicy
-assistant_id: 20240909-231754-pink-headline
+assistant_id: 20240916-132114-sad-voile

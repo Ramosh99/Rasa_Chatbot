@@ -1,14 +1,17 @@
-# domain.yml
 intents:
   - greet
   - goodbye
   - book_room
   - inform
+  - admin_login
+  - view_bookings
 
 entities:
   - room_type
   - date
   - time
+  - username
+  - password
 
 slots:
   room_type:
@@ -26,6 +29,21 @@ slots:
     mappings:
     - type: from_entity
       entity: time
+  username:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: username
+  password:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: password
+  is_admin:
+    type: bool
+    initial_value: false
+    mappings:
+    - type: custom
 
 responses:
   utter_greet:
@@ -46,5 +64,26 @@ responses:
   utter_confirm_booking:
     - text: "Great! I've booked a {room_type} for {date} at {time}. Is there anything else I can help you with?"
 
+  utter_ask_username:
+    - text: "Please enter your admin username:"
+
+  utter_ask_password:
+    - text: "Please enter your admin password:"
+
+  utter_login_successful:
+    - text: "Login successful. You now have admin access."
+
+  utter_login_failed:
+    - text: "Login failed. Please try again or contact system administrator."
+
+  utter_not_admin:
+    - text: "Sorry, you need admin privileges to view all bookings."
+
+  utter_view_bookings:
+    - text: "Certainly! I'll show you all the bookings now."
+
 actions:
   - action_save_booking
+  - action_admin_login
+  - action_view_bookings
+  - utter_view_bookings

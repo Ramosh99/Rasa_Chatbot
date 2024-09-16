@@ -27,3 +27,20 @@ stories:
   - action: utter_confirm_booking
   - intent: goodbye
   - action: utter_goodbye
+
+- story: admin login and view bookings
+  steps:
+  - intent: admin_login
+  - action: utter_ask_username
+  - intent: inform
+    entities:
+    - username: "admin"
+  - action: utter_ask_password
+  - intent: inform
+    entities:
+    - password: "password123"
+  - action: action_admin_login
+  - action: utter_login_successful
+  - intent: view_bookings
+  - action: utter_view_bookings
+  - action: action_view_bookings

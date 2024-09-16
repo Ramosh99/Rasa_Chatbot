@@ -34,3 +34,28 @@ nlu:
     - Book it for [2023-10-01](date)
     - The time should be [14:00](time)
     - I want it at [10:30](time)
+    - My username is [admin](username)
+    - The password is [password123](password)
+
+
+- intent: admin_login
+  examples: |
+    - I want to log in as admin
+    - Admin login
+    - Log me in as administrator
+    - I need admin access
+
+- intent: view_bookings
+  examples: |
+    - Show me all bookings
+    - I want to see all room reservations
+    - Display all booked rooms
+    - List all bookings
+    - Show bookings
+    - View all reservations
+    - Can I see the bookings?
+    - Display room reservations
+    - Show all bookings
+    - Display all
+    - Give me a list of all bookings
+    - What are the current bookings?
