@@ -5,6 +5,7 @@ intents:
   - inform
   - admin_login
   - view_bookings
+  - display_csv_data
 
 entities:
   - room_type
@@ -87,3 +88,4 @@ actions:
   - action_admin_login
   - action_view_bookings
   - utter_view_bookings
+  - action_display_csv_data

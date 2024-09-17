@@ -79,3 +79,35 @@ class ActionViewBookings(Action):
             dispatcher.utter_message(response="utter_not_admin")
         
         return []
+
+class ActionDisplayCSVData(Action):
+    def name(self) -> Text:
+        return "action_display_csv_data"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        csv_file_path = "bookings.csv"  
+
+        try:
+            with open(csv_file_path, 'r') as file:
+                csv_reader = csv.reader(file)
+                headers = next(csv_reader)  # Read the header row
+                
+                # Create a formatted string for the headers
+                header_str = " | ".join(headers)
+                dispatcher.utter_message(text=f"CSV Headers: {header_str}")
+                
+                # Read and display each row
+                for row in csv_reader:
+                    row_str = " | ".join(row)
+                    dispatcher.utter_message(text=f"Row: {row_str}")
+                
+            dispatcher.utter_message(text="All CSV data has been displayed.")
+        except FileNotFoundError:
+            dispatcher.utter_message(text=f"Error: CSV file not found at {csv_file_path}")
+        except Exception as e:
+            dispatcher.utter_message(text=f"An error occurred: {str(e)}")
+
+        return []

@@ -59,3 +59,11 @@ nlu:
     - Display all
     - Give me a list of all bookings
     - What are the current bookings?
+
+- intent: display_csv_data
+  examples: |
+    - Show me the CSV data
+    - Display all data from the CSV file
+    - What's in the CSV file?
+    - Read the CSV file
+    - Give me the contents of the CSV

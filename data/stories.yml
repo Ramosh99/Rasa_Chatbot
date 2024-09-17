@@ -44,3 +44,8 @@ stories:
   - intent: view_bookings
   - action: utter_view_bookings
   - action: action_view_bookings
+
+- story: Display CSV Data
+  steps:
+  - intent: display_csv_data
+  - action: action_display_csv_data
