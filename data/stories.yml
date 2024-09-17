@@ -41,9 +41,8 @@ stories:
     - password: "password123"
   - action: action_admin_login
   - action: utter_login_successful
-  - intent: view_bookings
-  - action: utter_view_bookings
-  - action: action_view_bookings
+  - intent: display_csv_data
+  - action: action_display_csv_data
 
 - story: Display CSV Data
   steps:

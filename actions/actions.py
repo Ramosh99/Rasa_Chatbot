@@ -37,7 +37,7 @@ class ActionAdminLogin(Action):
         password = tracker.get_slot('password')
         
         # In a real application, you would check these credentials against a secure database
-        if username == "admin" and password == "123":
+        if username == "admin" and password == "password123":
             dispatcher.utter_message(response="utter_login_successful")
             return [SlotSet("is_admin", True)]
         else:
@@ -51,33 +51,29 @@ class ActionViewBookings(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        print("ActionViewBookings is being executed")  # Debug print
-        
-        if tracker.get_slot('is_admin'):
-            print("User is admin")  # Debug print
-            if os.path.exists('bookings.csv'):
-                print("bookings.csv exists")  # Debug print
-                # Read and display all bookings from the CSV file
-                with open('bookings.csv', 'r') as file:
-                    reader = csv.reader(file)
-                    bookings = list(reader)
+
+        csv_file_path = "bookings.csv"  
+
+        try:
+            with open(csv_file_path, 'r') as file:
+                csv_reader = csv.reader(file)
+                headers = next(csv_reader)  # Read the header row
                 
-                if bookings:
-                    message = "Here are all the bookings:\n"
-                    for booking in bookings:
-                        message += f"Room: {booking[0]}, Date: {booking[1]}, Time: {booking[2]}, Booked on: {booking[3]}\n"
-                else:
-                    message = "There are no bookings yet."
-            else:
-                print("bookings.csv does not exist")  # Debug print
-                message = "There are no bookings yet."
-            
-            dispatcher.utter_message(text=message)
-        else:
-            print("User is not admin")  # Debug print
-            dispatcher.utter_message(response="utter_not_admin")
-        
+                # Create a formatted string for the headers
+                header_str = " | ".join(headers)
+                dispatcher.utter_message(text=f"CSV Headers: {header_str}")
+                
+                # Read and display each row
+                for row in csv_reader:
+                    row_str = " | ".join(row)
+                    dispatcher.utter_message(text=f"Row: {row_str}")
+                
+            dispatcher.utter_message(text="All CSV data has been displayed.")
+        except FileNotFoundError:
+            dispatcher.utter_message(text=f"Error: CSV file not found at {csv_file_path}")
+        except Exception as e:
+            dispatcher.utter_message(text=f"An error occurred: {str(e)}")
+
         return []
 
 class ActionDisplayCSVData(Action):
