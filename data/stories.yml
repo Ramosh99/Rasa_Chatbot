@@ -5,6 +5,12 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: book_room
+  - action: utter_ask_name
+  - intent: user_name
+  - entities:
+    - name: "John"
+  - slot_was_set:
+    - name: "John"
   - action: utter_ask_room_type
   - intent: inform
     entities:

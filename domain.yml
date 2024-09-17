@@ -13,6 +13,7 @@ entities:
   - time
   - username
   - password
+  - name
 
 slots:
   room_type:
@@ -45,6 +46,11 @@ slots:
     initial_value: false
     mappings:
     - type: custom
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
 
 responses:
   utter_greet:
@@ -82,6 +88,9 @@ responses:
 
   utter_view_bookings:
     - text: "Certainly! I'll show you all the bookings now."
+
+  utter_ask_name:
+    - text: "May I know your name please?"
 
 actions:
   - action_save_booking

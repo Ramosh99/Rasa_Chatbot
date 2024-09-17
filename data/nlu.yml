@@ -67,3 +67,11 @@ nlu:
     - What's in the CSV file?
     - Read the CSV file
     - Give me the contents of the CSV
+
+- intent: user_name
+  examples: |
+    - John Doe
+    - Jane Smith
+    - Robert Johnson
+    - Maria Garcia
+    - Any Name Here
