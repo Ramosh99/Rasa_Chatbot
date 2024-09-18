@@ -6,6 +6,7 @@ intents:
   - admin_login
   - view_bookings
   - display_csv_data
+  - provide_name
 
 entities:
   - room_type
@@ -13,6 +14,7 @@ entities:
   - time
   - username
   - password
+  - name
 
 slots:
   room_type:
@@ -45,7 +47,11 @@ slots:
     initial_value: false
     mappings:
     - type: custom
-
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
 
 responses:
   utter_greet:
@@ -84,7 +90,11 @@ responses:
   utter_view_bookings:
     - text: "Certainly! I'll show you all the bookings now."
 
+  utter_ask_name:
+    - text: "Before we proceed, may I know your name?"
 
+  utter_greet_with_name:
+    - text: "Hello, {name}! How can I help you with room booking today?"
 
 actions:
   - action_save_booking
@@ -92,3 +102,4 @@ actions:
   - action_view_bookings
   - utter_view_bookings
   - action_display_csv_data
+  - action_capture_name

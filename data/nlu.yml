@@ -1,4 +1,3 @@
-# data/nlu.yml
 nlu:
 - intent: greet
   examples: |
@@ -37,7 +36,6 @@ nlu:
     - My username is [admin](username)
     - The password is [password123](password)
 
-
 - intent: admin_login
   examples: |
     - I want to log in as admin
@@ -67,3 +65,13 @@ nlu:
     - What's in the CSV file?
     - Read the CSV file
     - Give me the contents of the CSV
+
+- intent: provide_name
+  examples: |
+    - My name is [John](name)
+    - I'm [Sarah](name)
+    - The name's [Bond, James Bond](name)
+    - Call me [Ishmael](name)
+    - It's [Alice](name)
+    - [Bob](name) here
+    - [Charlie](name) is my name

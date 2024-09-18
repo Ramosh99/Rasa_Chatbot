@@ -1,9 +1,15 @@
 # data/stories.yml
 stories:
-- story: happy path
+- story: happy path with name
   steps:
   - intent: greet
-  - action: utter_greet
+  - action: utter_ask_name
+  - intent: provide_name
+    entities:
+    - name: "John"
+  - slot_was_set:
+    - name: "John"
+  - action: utter_greet_with_name
   - intent: book_room
   - action: utter_ask_room_type
   - intent: inform

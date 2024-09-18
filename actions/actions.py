@@ -16,13 +16,13 @@ class ActionSaveBooking(Action):
         
         room_type = tracker.get_slot('room_type')
         date = tracker.get_slot('date')
+        name  = tracker.get_slot('name')
         time = tracker.get_slot('time')
-        # name = tracker.get_slot('name')
         
         # Save the booking information to a CSV file
         with open('bookings.csv', 'a', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow([room_type, date, time, datetime.now()])
+            writer.writerow([name,room_type, date, time, datetime.now()])
         
         return []
 
@@ -108,3 +108,4 @@ class ActionDisplayCSVData(Action):
             dispatcher.utter_message(text=f"An error occurred: {str(e)}")
 
         return []
+
